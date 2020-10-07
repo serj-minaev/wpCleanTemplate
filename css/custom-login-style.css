@@ -1,0 +1,21 @@
+.login h1 a {
+  background-image: url("./../img/logo.svg");
+  background-size: 200px !important;
+  background-position: center center;
+  height: 200px;
+  width: 200px !important;
+  margin: 0 auto;
+}
+
+body.login {
+  background-image: url("./../img/login-background.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+
+#loginform {
+  border-radius: 5px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}

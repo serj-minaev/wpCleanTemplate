@@ -1,0 +1,29 @@
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "bootstrap/bootstrap-rtl";
+
+// Font
+@import "fonts";
+
+// Components
+
+// Pages
+@import "home-page";
+
+//////////////////////////////////////////
+// Body
+//////////////////////////////////////////
+
+body {
+  background: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+section {
+  content-visibility: auto;
+}
