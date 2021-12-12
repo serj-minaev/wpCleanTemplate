@@ -1,5 +1,9 @@
 ### [wpCore](http://wpCore.devdino.com) Changelog
 
+## 2.0.1 (10 October, 2020)
+
+-
+
 ## 2.0.0 (04 October, 2020)
 
 - Remove conditionizr

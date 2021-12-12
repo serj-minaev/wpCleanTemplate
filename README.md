@@ -1,10 +1,12 @@
-# [HTML5 Blank](http://wpCore.com)
+# [wpCore](http://wpCore.com)
 
 Powerful shell for rapidly deploying your WordPress projects.
 
-## Getting Started with HTML5 Blank
+## Getting Started with wpCore
 
-Download the latest version from [wpCore.com](http://wpCore.com)
+This assembly is focused on development speed.
+Out of the box, speed and performance indicators are 95-100%.
+What will happen to the site further depends on you :)
 
 ## Features
 
@@ -13,7 +15,6 @@ Download the latest version from [wpCore.com](http://wpCore.com)
 - Basic Semantic HTML5 Markup
 - W3C Valid Code Foundations
 - Responsive Ready, ViewPort meta data
-- HTML Class support for IE7, IE8, IE9 Conditionals (HTML5 Boilerplate)
 - Clean, neatly organised code, with PHP annotations
 
 ### jQuery + JavaScript

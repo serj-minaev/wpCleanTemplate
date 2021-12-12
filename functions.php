@@ -4,15 +4,15 @@
  *  Custom functions, support, custom post types and more.
  */
 
-/*------------------------------------*\
-	External Modules/Files
-\*------------------------------------*/
+//////////////////////////////////////////
+// External Modules/Files
+//////////////////////////////////////////
 
 // Load any external files you have here
 
-/*------------------------------------*\
-	Theme Support
-\*------------------------------------*/
+//////////////////////////////////////////
+// Theme Support
+//////////////////////////////////////////
 
 if (!isset($content_width))
 {
@@ -57,11 +57,11 @@ if (function_exists('add_theme_support'))
     load_theme_textdomain('wpCore', get_template_directory() . '/languages');
 }
 
-/*------------------------------------*\
-	Functions
-\*------------------------------------*/
+//////////////////////////////////////////
+// Functions
+//////////////////////////////////////////
 
-// HTML5 Blank navigation
+// Blank navigation
 function wpCore_nav()
 {
 	wp_nav_menu(
@@ -86,7 +86,7 @@ function wpCore_nav()
 	);
 }
 
-// Load HTML5 Blank scripts (header.php)
+// Load scripts (header.php)
 function wpCore_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
@@ -100,7 +100,7 @@ function wpCore_header_scripts()
     }
 }
 
-// Load HTML5 Blank conditional scripts
+// Load conditional scripts
 function wpCore_conditional_scripts()
 {
     if (is_page('pagenamehere')) {
@@ -109,7 +109,7 @@ function wpCore_conditional_scripts()
     }
 }
 
-// Load HTML5 Blank styles
+// Load styles
 function wpCore_styles()
 {
     wp_register_style('bootstrap-styles', get_template_directory_uri() . '/css/style.min.css', array(), '1.0', 'all');
@@ -119,7 +119,7 @@ function wpCore_styles()
     wp_enqueue_style('wpCore'); // Enqueue it!
 }
 
-// Register HTML5 Blank Navigation
+// Register Navigation
 function register_html5_menu()
 {
     register_nav_menus(array( // Using array to specify more menus if needed
@@ -354,7 +354,9 @@ add_action('after_setup_theme', 'remove_type'); // Registering theme support for
 if (is_admin('manage_options')) { add_action('admin_init', 'remove_dashboard_meta' ); } // Remove dashboard widgets only for admin
 
 
+//////////////////////////////////////////
 // Remove Actions
+////////////////////////////////////////// 
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
 remove_action('wp_head', 'feed_links', 2); // Display the links to the general feeds: Post and Comment Feed
 remove_action('wp_head', 'rsd_link'); // Display the link to the Really Simple Discovery service endpoint, EditURI link
@@ -368,6 +370,13 @@ remove_action('wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
 remove_action('wp_head', 'rel_canonical');
 remove_action('wp_head', 'wp_shortlink_wp_head', 10, 0);
 remove_action('welcome_panel', 'wp_welcome_panel'); // Remove welcome panel in dashboard
+//////////////////////////////////////////
+// Remove emoji styles & scripts
+//////////////////////////////////////////
+remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+remove_action( 'wp_print_styles', 'print_emoji_styles' );
+remove_action( 'admin_print_styles', 'print_emoji_styles' );
 
 // Add Filters
 // add_filter('avatar_defaults', 'wpCoregravatar'); // Custom Gravatar in Settings > Discussion
@@ -399,9 +408,9 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // Shortcodes above would be nested like this -
 // [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
 
-/*------------------------------------*\
-	Custom Post Types
-\*------------------------------------*/
+//////////////////////////////////////////
+// Custom Post Types
+//////////////////////////////////////////
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
@@ -562,13 +571,11 @@ function custom_login() {
 
 
 //////////////////////////////////////////
-// Remove type of style and script tags
+// another favicon for admin panel
 //////////////////////////////////////////
-function remove_type() {
-    add_theme_support( 'html5', [ 'script', 'style' ] );
+function favicon4admin() {
+echo '<link rel="Shortcut Icon" type="image/x-icon" href="' . get_template_directory_uri() . '/img/logo-16x16.png" />';
 }
-
-
-
+add_action( 'admin_head', 'favicon4admin' );
 
 ?>
